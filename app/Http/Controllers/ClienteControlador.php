@@ -25,12 +25,21 @@ class ClienteControlador extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function index()
     {
         $clientes = session('clientes');
-        return view('clientes.index', compact(['clientes']));
+        $titulo = "Todos os clientes";
+
+//        return view('clientes.index',
+//            ['clientes'=>$clientes, 'titulo'=>$titulo]);
+
+//        return view('clientes.index')
+//            ->with('clientes', $clientes)
+//            ->with('titulo', $titulo);
+
+        return view('clientes.index', compact(['clientes', 'titulo']));
     }
 
     /**
