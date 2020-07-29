@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::get('produtos', function () {
     return view('outras.produtos');
@@ -29,4 +29,10 @@ Route::get('idade', 'MeuControlador@getIdade');
 Route::get('multiplicar/{n1}/{n2}', 'MeuControlador@multiplicar');
 
 Route::resource('clientes', 'ClienteControlador');
+
+Route::get('usuarios', ['as' => 'users.index', 'uses' => 'UsersController@index']);
+
+Route::get('/', function () {
+    return redirect()->route('users.index');
+});
 
