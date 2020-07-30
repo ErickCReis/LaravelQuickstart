@@ -2,8 +2,7 @@
 
 @section('content')
     <h1>@{{ title }}</h1>
-
-    <vc-users></vc-users>
+    <vc-users :users="{{ json_encode($users)}}"></vc-users>
 
 @stop
 
